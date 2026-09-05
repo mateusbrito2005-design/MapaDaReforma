@@ -53,7 +53,8 @@
 
   /* ---------- Hero ---------- */
   .hero{padding:36px 0 32px;}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center;}
+  .hero-grid > div{min-width:0;}
   .hero h1{font-size:clamp(28px,6vw,42px);color:var(--navy);margin:18px 0 16px;}
   .hero h1 span{color:var(--green-dark);}
   .hero p.lead{font-size:clamp(15px,3.6vw,18px);color:var(--muted);max-width:520px;}
@@ -61,7 +62,7 @@
   .hero-points li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--ink);}
   .hero-points svg{flex:none;margin-top:2px;}
   .hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
-  .hero-actions .btn{flex:1 1 auto;white-space:nowrap;}
+  .hero-actions .btn{flex:1 1 auto;}
   .microtrust{display:flex;gap:14px;flex-wrap:wrap;margin-top:16px;font-size:12.5px;color:var(--muted);}
   .microtrust span{display:flex;align-items:center;gap:6px;}
 
@@ -238,7 +239,8 @@
   /* ================= Tablet / small desktop ================= */
   @media (max-width: 900px){
     section{padding:52px 0;}
-    .hero-grid, .sample-grid, .guarantee, .bonus-hero, .sources{grid-template-columns:1fr;}
+    .hero-grid, .sample-grid, .guarantee, .bonus-hero, .sources{grid-template-columns:minmax(0,1fr);}
+    .hero-grid > *, .sample-grid > *, .guarantee > *, .bonus-hero > *, .sources > *{min-width:0;}
     .sources-img{max-width:180px;margin:0 auto;}
     .sources{text-align:center;}
     .bonus-hero-img{max-width:220px;margin:0 auto;}
