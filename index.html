@@ -332,6 +332,40 @@ src="https://www.facebook.com/tr?id=1598442358740052&ev=PageView&noscript=1"
     .btn-primary:hover{transform:none;}
   }
 </style>
+<script>
+(function () {
+  var API = "https://app-production-3ad5.up.railway.app";
+  var CHECKOUT_MATCH = "wiapy.com";
+  var params = new URLSearchParams(window.location.search);
+  var clickId = params.get("click_id") || sessionStorage.getItem("utmtrack_click_id");
+  if (params.get("click_id")) sessionStorage.setItem("utmtrack_click_id", params.get("click_id"));
+  if (!clickId) return;
+
+  function sendEvent(event) {
+    var payload = JSON.stringify({ click_id: clickId, event: event });
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(API + "/api/tracking/event", new Blob([payload], { type: "application/json" }));
+    } else {
+      fetch(API + "/api/tracking/event", { method: "POST", headers: { "Content-Type": "application/json" }, body: payload, keepalive: true });
+    }
+  }
+
+  sendEvent("page_view");
+
+  document.addEventListener("click", function (e) {
+    var link = e.target.closest("a[href*='" + CHECKOUT_MATCH + "']");
+    if (!link) return;
+    sendEvent("checkout_initiated");
+    try {
+      var url = new URL(link.href);
+      url.searchParams.set("click_id", clickId);
+      url.searchParams.set("src", clickId);
+      url.searchParams.set("sck", clickId);
+      link.href = url.toString();
+    } catch (err) {}
+  }, true);
+})();
+</script>
 </head>
 <body>
 
