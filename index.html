@@ -342,11 +342,12 @@ src="https://www.facebook.com/tr?id=1598442358740052&ev=PageView&noscript=1"
   if (!clickId) return;
 
   function sendEvent(event) {
+    var pixel = new Image();
+    pixel.src = API + "/api/tracking/pixel.gif?click_id=" + encodeURIComponent(clickId) + "&event=" + encodeURIComponent(event);
+
     var payload = JSON.stringify({ click_id: clickId, event: event });
     if (navigator.sendBeacon) {
       navigator.sendBeacon(API + "/api/tracking/event", new Blob([payload], { type: "application/json" }));
-    } else {
-      fetch(API + "/api/tracking/event", { method: "POST", headers: { "Content-Type": "application/json" }, body: payload, keepalive: true });
     }
   }
 
