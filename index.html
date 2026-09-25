@@ -159,11 +159,6 @@ src="https://www.facebook.com/tr?id=1598442358740052&ev=PageView&noscript=1"
   .who-icon{flex:none;color:var(--green-dark);}
   .who-card p{font-size:14px;color:var(--muted);}
 
-  /* ---------- Deliverables ---------- */
-  .deliver{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:40px;}
-  .deliver-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;}
-  .deliver-list li{display:flex;gap:10px;align-items:flex-start;font-size:15px;}
-
   /* ---------- Bonuses ---------- */
   .bonus-hero{display:grid;grid-template-columns:260px 1fr;gap:32px;background:var(--card);border:2px solid var(--amber);border-radius:20px;padding:28px;align-items:center;}
   .bonus-hero-img{border-radius:12px;overflow:hidden;box-shadow:0 16px 32px rgba(11,47,91,.16);}
@@ -266,9 +261,9 @@ src="https://www.facebook.com/tr?id=1598442358740052&ev=PageView&noscript=1"
     .bonus-hero-img{max-width:220px;margin:0 auto;}
     .bonus-hero-body{text-align:center;}
     .bonus-hero-list{text-align:left;max-width:420px;margin:0 auto 16px;}
-    .feat-grid, .who-grid, .test-grid, .deliver-list, .bonus-grid, .steps, .foot-grid{grid-template-columns:1fr 1fr;}
+    .feat-grid, .who-grid, .test-grid, .bonus-grid, .steps, .foot-grid{grid-template-columns:1fr 1fr;}
     .hero-intro, .hero-visual, .hero-rest{grid-column:1;grid-row:auto;}
-    .hero-visual{margin:20px 0 4px;}
+    .hero-visual{margin:20px 0 4px;display:flex;justify-content:center;}
     .hero-visual-inner{height:300px;max-width:230px;margin:0 auto;}
     .hero-visual .stackcard{width:210px;}
     .hero-visual .stackcard.c1{top:0;left:50%;transform:translateX(-50%);}
@@ -302,9 +297,9 @@ src="https://www.facebook.com/tr?id=1598442358740052&ev=PageView&noscript=1"
     .hero-actions{flex-direction:column;align-items:stretch;}
     .hero-actions .btn{width:100%;}
     .btn{padding:15px 22px;font-size:15px;}
-    .feat-grid, .who-grid, .test-grid, .deliver-list, .bonus-grid, .steps, .foot-grid{grid-template-columns:1fr;}
+    .feat-grid, .who-grid, .test-grid, .bonus-grid, .steps, .foot-grid{grid-template-columns:1fr;}
     .sec-head{margin-bottom:28px;}
-    .sample, .final-cta, .deliver, .guarantee{padding:28px 20px;}
+    .sample, .final-cta, .guarantee{padding:28px 20px;}
     .bonus-card{padding:18px;}
     .price-card{padding:24px 20px;}
     .foot-grid{gap:26px;}
@@ -501,26 +496,6 @@ src="https://www.facebook.com/tr?id=1598442358740052&ev=PageView&noscript=1"
       <div class="who-card"><h3><svg class="who-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 11 12 4l8 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10v9h12v-9" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Quem aluga mais de um imóvel</h3><p>Entender se o total recebido de aluguel entra no critério da Receita.</p></div>
       <div class="who-card"><h3><svg class="who-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="18" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Quem recebe por carnê-leão</h3><p>Descobrir se compensa continuar pessoa física ou migrar pro cadastro novo.</p></div>
       <div class="who-card"><h3><svg class="who-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M4 9.5h16M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Quem não quer ser pego de surpresa</h3><p>Saber com antecedência o que muda antes do prazo de janeiro de 2027.</p></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="deliver">
-      <div class="sec-head" style="margin-bottom:28px;">
-        <span class="eyebrow">Conteúdo principal · Página 01</span>
-        <h2>O que é o CNPJ Técnico, explicado em mapa mental</h2>
-      </div>
-      <ul class="deliver-list">
-        <li>✅ O que é: cadastro simplificado pra emitir nota, não abrir empresa</li>
-        <li>✅ Quem precisa: contribuinte de IBS/CBS acima do limite do nanoempreendedor</li>
-        <li>✅ Quando: obrigatoriedade a partir de 1º de janeiro de 2027</li>
-        <li>✅ Como se cadastra: sistema estilo MEI, a partir de nov/2026</li>
-        <li>✅ O que não muda: continua sendo pessoa física, não vira empresa</li>
-        <li>✅ Quem fica de fora: nanoempreendedores, CLT, aposentados, investidores</li>
-        <li>✅ Base legal: Art. 59 da LC 214/2025</li>
-      </ul>
     </div>
   </div>
 </section>
