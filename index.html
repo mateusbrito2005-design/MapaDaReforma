@@ -88,14 +88,18 @@ src="https://www.facebook.com/tr?id=1598442358740052&ev=PageView&noscript=1"
   .microtrust{display:flex;gap:14px;flex-wrap:wrap;margin-top:16px;font-size:12.5px;color:var(--muted);}
   .microtrust span{display:flex;align-items:center;gap:6px;}
 
-  /* hero visual (desktop) */
+  /* hero visual (desktop) — phone mockups */
   .hero-visual{position:relative;}
-  .stackcard{background:var(--card);border-radius:14px;box-shadow:0 24px 50px rgba(11,47,91,.18);padding:6px;position:absolute;width:190px;border:1px solid var(--line);overflow:hidden;}
-  .stackcard img{border-radius:9px;width:100%;height:auto;display:block;}
+  .stackcard{background:#05070C;border-radius:26px;box-shadow:0 24px 50px rgba(0,0,0,.5);padding:13px 7px;position:absolute;width:190px;border:1px solid rgba(255,255,255,.08);overflow:hidden;}
+  .stackcard::before{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:34px;height:4px;border-radius:3px;background:rgba(255,255,255,.2);}
+  .stackcard::after{content:"";position:absolute;bottom:6px;left:50%;transform:translateX(-50%);width:50px;height:3px;border-radius:2px;background:rgba(255,255,255,.2);}
+  .stackcard img{border-radius:15px;width:100%;height:auto;display:block;}
   .stackcard.c1{top:0;left:30px;transform:rotate(-6deg);z-index:2;}
   .stackcard.c2{top:70px;right:10px;transform:rotate(5deg);z-index:3;}
   .stackcard.c3{top:220px;left:80px;transform:rotate(-2deg);z-index:4;}
   .hero-visual-inner{height:460px;position:relative;}
+  .hero-format{display:flex;align-items:center;gap:8px;margin:14px 0 0;font-size:14px;color:var(--ink);}
+  .hero-format svg{flex:none;color:var(--green-dark);}
 
   /* ---------- Section headers ---------- */
   .sec-head{max-width:680px;margin:0 auto 36px;text-align:center;}
@@ -167,10 +171,6 @@ src="https://www.facebook.com/tr?id=1598442358740052&ev=PageView&noscript=1"
   .bonus-hero-body h3{font-size:20px;color:var(--heading);margin-bottom:10px;}
   .bonus-hero-body p{font-size:14.5px;color:var(--muted);margin-bottom:14px;}
   .bonus-hero-list{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:7px;font-size:13.5px;}
-
-  .bonus-peek{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px;}
-  .bonus-peek .gallery-item img{aspect-ratio:900/1274;}
-  .bonus-peek .gallery-item span{font-size:11px;padding:16px 8px 8px;}
 
   .bonus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
   .bonus-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;gap:16px;}
@@ -269,11 +269,10 @@ src="https://www.facebook.com/tr?id=1598442358740052&ev=PageView&noscript=1"
     .feat-grid, .who-grid, .test-grid, .deliver-list, .bonus-grid, .steps, .foot-grid{grid-template-columns:1fr 1fr;}
     .hero-intro, .hero-visual, .hero-rest{grid-column:1;grid-row:auto;}
     .hero-visual{margin:20px 0 4px;}
-    .hero-visual-inner{height:250px;max-width:340px;margin:0 auto;}
-    .hero-visual .stackcard{width:150px;}
-    .hero-visual .stackcard.c1{top:0;left:8px;}
-    .hero-visual .stackcard.c2{top:14px;right:4px;}
-    .hero-visual .stackcard.c3{top:34px;left:60px;}
+    .hero-visual-inner{height:300px;max-width:230px;margin:0 auto;}
+    .hero-visual .stackcard{width:210px;}
+    .hero-visual .stackcard.c1{top:0;left:50%;transform:translateX(-50%);}
+    .hero-visual .stackcard.c2,.hero-visual .stackcard.c3{display:none;}
     .guarantee{text-align:center;justify-items:center;}
     .guarantee .seal{margin:0 auto;}
     .price-grid{display:flex;flex-direction:column;}
@@ -291,7 +290,6 @@ src="https://www.facebook.com/tr?id=1598442358740052&ev=PageView&noscript=1"
     .car-nav{width:34px;height:34px;font-size:16px;}
     .car-nav.prev{left:-4px;}
     .car-nav.next{right:-4px;}
-    .bonus-peek{grid-template-columns:1fr 1fr;}
     .bonus-hero{padding:20px;}
     .bonus-card{flex-direction:column;}
     .bonus-card-img{width:100%;height:auto;aspect-ratio:900/1274;max-height:160px;}
@@ -350,6 +348,7 @@ src="https://www.facebook.com/tr?id=1598442358740052&ev=PageView&noscript=1"
       <span class="eyebrow">Reforma Tributária · Edição simplificada</span>
       <h1>Guia Fácil do CNPJ Técnico <span>descubra se você precisa se cadastrar antes do prazo oficial</span></h1>
       <p class="lead">Vale pra médico, personal trainer, motorista de app ou quem aluga imóvel: se você fatura mais de R$ 40.500/ano de forma habitual, este guia mostra se isso é você — sem juridiquês.</p>
+      <p class="hero-format"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="7" y="2" width="10" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M11 19h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Guia digital, direto pelo celular — acesso liberado na hora</p>
       <span class="eyebrow" style="background:rgba(232,176,75,.16);color:var(--amber-light);margin-top:14px;">📅 Prazo oficial: 1º de janeiro de 2027</span>
     </div>
     <div class="hero-visual">
@@ -505,24 +504,9 @@ src="https://www.facebook.com/tr?id=1598442358740052&ev=PageView&noscript=1"
         <span class="bonus-hero-tag">BÔNUS PRINCIPAL</span>
         <h3>Kit completo pra descobrir sua situação</h3>
         <p>Tudo pra saber se você se enquadra, quando o prazo chega e o que muda.</p>
-        <ul class="bonus-hero-list">
-          <li>✅ Checklist "Preciso ou não do CNPJ Técnico?" com veredito na hora</li>
-          <li>✅ Linha do Tempo oficial (prorrogação, cadastro e obrigatoriedade)</li>
-          <li>✅ Glossário Visual de Termos</li>
-          <li>✅ Simulador de Impacto — quanto isso pode custar pra você</li>
-          <li>✅ Comparativo Pessoa Física x CNPJ Técnico</li>
-          <li>✅ O que muda por profissão</li>
-          <li>✅ 20 perguntas frequentes respondidas</li>
-        </ul>
+        <p class="muted" style="font-size:13.5px;margin-bottom:14px;">Inclui checklist, linha do tempo, simulador de impacto, glossário, comparativo, guia por profissão e 20 perguntas respondidas — tudo detalhado logo abaixo.</p>
         <span class="bonus-value" style="font-size:14px;">Kit avulso equivalente: R$189 — <strong style="color:var(--green-dark);">grátis no Plano Principal</strong></span>
       </div>
-    </div>
-
-    <div class="bonus-peek">
-      <button class="gallery-item" data-full="img/real-checklist.jpg"><img src="img/real-checklist.jpg" alt="Prévia: Checklist Preciso ou não do CNPJ Técnico" loading="lazy"><span>Checklist</span></button>
-      <button class="gallery-item" data-full="img/real-linha-tempo.jpg"><img src="img/real-linha-tempo.jpg" alt="Prévia: Linha do Tempo oficial" loading="lazy"><span>Linha do tempo</span></button>
-      <button class="gallery-item" data-full="img/real-glossario.jpg"><img src="img/real-glossario.jpg" alt="Prévia: Glossário Visual" loading="lazy"><span>Glossário visual</span></button>
-      <button class="gallery-item" data-full="img/real-simulador.jpg"><img src="img/real-simulador.jpg" alt="Prévia: Simulador de Impacto" loading="lazy"><span>Simulador</span></button>
     </div>
 
     <div class="sec-head" style="margin:36px 0 24px;">
@@ -594,16 +578,10 @@ src="https://www.facebook.com/tr?id=1598442358740052&ev=PageView&noscript=1"
         <div class="price-now">R$29,90</div>
         <div class="price-save">economia de R$40</div>
         <ul class="price-list price-list-full">
-          <li>✅ Guia Fácil do CNPJ Técnico (organograma completo)</li>
-          <li>✅ Quem precisa se cadastrar e quem fica de fora</li>
-          <li>✅ O prazo oficial: 1º de janeiro de 2027</li>
-          <li>✅ Como funciona o cadastro simplificado da Receita Federal</li>
-          <li>✅ <strong>Checklist "Preciso ou Não do CNPJ Técnico?"</strong> — veredito em tempo real</li>
-          <li>✅ <strong>Linha do Tempo Oficial</strong> — prorrogação, cadastro e obrigatoriedade</li>
-          <li>✅ <strong>Glossário Visual</strong> — IBS, CBS, MEI, carnê-leão, habitualidade</li>
-          <li>✅ <strong>Simulador de Impacto</strong> — quanto isso pode custar pra você</li>
-          <li>✅ <strong>Pessoa Física x CNPJ Técnico</strong> — comparativo lado a lado</li>
-          <li>✅ <strong>O Que Muda por Profissão</strong> — médicos, advogados, engenheiros e mais</li>
+          <li>✅ Guia completo: o que é, quem precisa e o prazo oficial (1º/01/2027)</li>
+          <li>✅ <strong>Checklist "Preciso ou Não?"</strong> — veredito na hora</li>
+          <li>✅ <strong>Linha do Tempo Oficial</strong> + <strong>Simulador de Impacto</strong></li>
+          <li>✅ <strong>Glossário Visual</strong> + <strong>Comparativo</strong> + <strong>Guia por Profissão</strong></li>
           <li>✅ <strong>20 Perguntas Frequentes Respondidas</strong></li>
         </ul>
         <a href="https://pay.wiapy.com/cxH7LoR__Wrq" class="btn btn-primary btn-block btn-pulse" id="btnCompleto">Quero o plano principal →</a>
